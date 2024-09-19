@@ -1,0 +1,45 @@
+name: e_commerce
+description: ""
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
+  icons_launcher: ^2.1.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+  - assets/opening.png
+  - assets/images/
+  - assets/icons/
+
+
+# fonts:
+#   - family: Muli
+#     fonts:
+#       - asset: assets/fonts/muli/Muli.ttf
+#       - asset: assets/fonts/muli/Muli-Bold.ttf
+#         weight: 700
+#       - asset: asstes/fonts/muli/Muli-Light.ttf
+#         weight: 300
+
+icons_launcher:
+  image_path: "assets/logo.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
