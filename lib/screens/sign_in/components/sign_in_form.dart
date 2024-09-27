@@ -118,7 +118,6 @@ class _SignInFormState extends State<SignInForm> {
         labelText: "Password",
         hintText: "Enter Your Password",
                                     
-        floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CostumSuffixIcon(
           icon: "assets/icons/Lock.svg",
         )
@@ -160,7 +159,6 @@ class _SignInFormState extends State<SignInForm> {
         labelText: "Email",
         hintText: "Enter Your Email",
                                     
-        floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CostumSuffixIcon(
           icon: "assets/icons/Mail.svg",
         )

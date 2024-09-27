@@ -1,4 +1,6 @@
 
+// ignore_for_file: non_constant_identifier_names, prefer_const_constructors
+
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -33,5 +35,21 @@ const String kMatchPassError = "Passwords don't match";
 
 //complete profile
 const String kNameNullError = "Please enter your name";
-const String kNumberNullError = "Please enter your phone number";
+const String kPhoneNumberNullError = "Please enter your phone number";
 const String kAddressNullError = "Please enter your address";
+
+//otp style
+
+final OtpFormDecoration = InputDecoration(
+    contentPadding: EdgeInsets.symmetric(vertical: getPropScreenWidth(15)),
+    enabledBorder: otpOutlineInputBorder(),
+    focusedBorder: otpOutlineInputBorder(),
+    border: otpOutlineInputBorder(),
+);
+
+OutlineInputBorder otpOutlineInputBorder() {
+  return OutlineInputBorder(
+  borderRadius: BorderRadius.circular(15),
+  borderSide: BorderSide(color: kTextColor),
+  );
+}

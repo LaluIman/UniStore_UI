@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, body_might_complete_normally_nullable
 
-import 'package:e_commerce/components/cutom_suffix_icon.dart';
 import 'package:e_commerce/constant.dart';
+import 'package:e_commerce/screens/complete_profile_screen/components/complete_profile_form.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -30,51 +30,15 @@ class _BodyState extends State<Body> {
               height: SizeConfig.screenHeight * 0.06
             ),
             CompleteProfileForm(),
+            SizedBox(
+              height: getPropScreenHeight(20),
+            ),
+        
+            Text("By continuing you agreed with our \n term & condition", 
+            textAlign: TextAlign.center,)
           ],),
         ),
       ),
-    );
-  }
-}
-
-class CompleteProfileForm extends StatefulWidget {
-  const CompleteProfileForm({super.key});
-
-  @override
-  State<CompleteProfileForm> createState() => _CompleteProfileFormState();
-}
-
-class _CompleteProfileFormState extends State<CompleteProfileForm> {
-  String? firstName;
-  String? lastName;
-  String? phoneNumber;
-  String? address;
-
-  final _formKey = GlobalKey<FormState>;
-  List<String> errors = [];  
-  @override
-  Widget build(BuildContext context) {
-    return Form(child: 
-      Column(children: [
-        TextFormField(
-          onSaved: (newValue) => firstName = newValue,
-          onChanged: (value){
-            
-          },
-          validator: (value) {
-            
-          },
-          decoration: const InputDecoration(
-            labelText: "First name",
-            hintText: "First name",
-                                        
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-            suffixIcon: CostumSuffixIcon(
-              icon: "assets/icons/User.svg",
-            )
-          ),             
-        )
-      ],)
     );
   }
 }

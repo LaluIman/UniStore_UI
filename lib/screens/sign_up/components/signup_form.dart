@@ -93,7 +93,6 @@ class _SignUpFormState extends State<SignUpForm> {
       labelText: "Password",
       hintText: "Enter Your Password",
                                   
-      floatingLabelBehavior: FloatingLabelBehavior.always,
       suffixIcon: CostumSuffixIcon(
         icon: "assets/icons/Lock.svg",
       )
@@ -135,7 +134,7 @@ class _SignUpFormState extends State<SignUpForm> {
             labelText: "Email",
             hintText: "Enter Your Email",
                                         
-            floatingLabelBehavior: FloatingLabelBehavior.always,
+            // floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: CostumSuffixIcon(
               icon: "assets/icons/Mail.svg",
             )
@@ -169,7 +168,6 @@ class _SignUpFormState extends State<SignUpForm> {
       labelText: "Repeat password",
       hintText: "Repeat password",
                                   
-      floatingLabelBehavior: FloatingLabelBehavior.always,
       suffixIcon: CostumSuffixIcon(
         icon: "assets/icons/Lock Circle.svg",
       )
