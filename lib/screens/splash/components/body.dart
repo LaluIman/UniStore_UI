@@ -92,7 +92,7 @@ class _BodyState extends State<Body> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      currentPage < splashData.length - 1 ? '' : 'Sign in',
+                      currentPage < splashData.length - 1 ? '' : 'Enter',
                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Icon(Icons.chevron_right, size: 25,),

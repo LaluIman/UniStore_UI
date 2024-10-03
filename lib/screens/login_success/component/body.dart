@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
           ),
           Image.asset("assets/images/success1.png"),
           const SizedBox(
-            height: 20,
+            height: 50,
           ),
           const Text("Success!", style: TextStyle(
             fontSize: 35,
@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
           ),
 
           SizedBox(
-            height: 100,
+            height: 50,
           ),
 
           SizedBox(

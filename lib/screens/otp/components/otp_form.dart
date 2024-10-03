@@ -1,6 +1,5 @@
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/constant.dart';
-import 'package:e_commerce/screens/home_screen/home_screen.dart';
 import 'package:e_commerce/screens/login_success/login_success_screen.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
