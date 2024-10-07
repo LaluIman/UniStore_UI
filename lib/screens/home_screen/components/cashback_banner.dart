@@ -12,7 +12,7 @@ class cashbackBanner extends StatelessWidget {
     return Container(
         width: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: getPropScreenWidth(20)),
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         decoration: BoxDecoration(
             color: Colors.black,
             borderRadius: BorderRadius.circular(15),
@@ -25,7 +25,7 @@ class cashbackBanner extends StatelessWidget {
             Text(
               "a summer suprise",
               style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
             ),
             Text(
               "Cashback 20%",
