@@ -17,12 +17,12 @@ class Sectiontitle extends StatelessWidget {
       children: [
       Text(title, style: TextStyle(
         fontSize: getPropScreenWidth(18),
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w700,
       ),),
       Text("See more", style: TextStyle(
         fontSize: getPropScreenWidth(13),
         color: Colors.grey,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w600,
         decoration: TextDecoration.underline
       ),)
     ],);

@@ -63,7 +63,7 @@ class itemCategory extends StatelessWidget {
           ),
           Text(name, style: TextStyle(
             fontSize: getPropScreenWidth(10),
-            fontWeight: FontWeight.w800
+            fontWeight: FontWeight.w600
           ), textAlign: TextAlign.center,)
         ],
       ),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:e_commerce/screens/home_screen/components/body.dart';
+import 'package:e_commerce/screens/home_screen/components/bottom_navigationbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,6 +12,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Body(),
+
+      bottomNavigationBar: BottomNavbar()
     );
   }
 }
+

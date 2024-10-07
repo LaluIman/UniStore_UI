@@ -10,10 +10,13 @@ class SpecialOffer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(children: [
-        SpecialOfferCard(category: "Smartphones", image: "assets/images/Image Banner 2.png", numOfBrands: 18),
-        SpecialOfferCard(category: "Fashion", image: "assets/images/Image Banner 3.png", numOfBrands: 28),
-      ],),
+      child: Padding(
+        padding: EdgeInsets.only(right: 20),
+        child: Row(children: [
+          SpecialOfferCard(category: "Smartphones", image: "assets/images/Image Banner 2.png", numOfBrands: 18),
+          SpecialOfferCard(category: "Fashion", image: "assets/images/Image Banner 3.png", numOfBrands: 28),
+        ],),
+      ),
     );
   }
 }
@@ -37,7 +40,7 @@ class SpecialOfferCard extends StatelessWidget {
           width: getPropScreenWidth(242),
           height: getPropScreenWidth(120),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(15),
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(

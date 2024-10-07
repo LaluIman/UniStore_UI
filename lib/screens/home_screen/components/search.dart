@@ -23,7 +23,7 @@ class SearchField extends StatelessWidget {
             border: InputBorder.none,
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,
-            hintText: "Search Product",
+            hintText: "Search a Product",
             hintStyle: const TextStyle(
               fontSize: 15
             ),

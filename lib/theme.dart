@@ -2,24 +2,32 @@
 
 import 'package:e_commerce/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 ThemeData themeData() {
     return ThemeData(
-      textTheme: GoogleFonts.plusJakartaSansTextTheme().copyWith(
-        titleLarge: GoogleFonts.plusJakartaSansTextTheme().titleLarge?.copyWith(
+      fontFamily: "PlusJakarta",
+      appBarTheme: const AppBarTheme(
+        color: Colors.white,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
+        titleTextStyle: TextStyle(
           color: kTextColor,
-          fontWeight: FontWeight.bold, 
-        ),
-        titleMedium: GoogleFonts.plusJakartaSansTextTheme().titleMedium?.copyWith(
-          color: kTextColor,
-          fontWeight: FontWeight.bold, 
-        ),
-        bodyMedium: GoogleFonts.plusJakartaSansTextTheme().bodyMedium?.copyWith(
-          color: kTextColor,
-          fontWeight: FontWeight.normal,
-        ),
-      ),
+          fontSize: 18,
+        )),
+      // textTheme: GoogleFonts.plusJakartaSansTextTheme().copyWith(
+      //   titleLarge: GoogleFonts.plusJakartaSansTextTheme().titleLarge?.copyWith(
+      //     color: kTextColor,
+      //     fontWeight: FontWeight.bold, 
+      //   ),
+      //   titleMedium: GoogleFonts.plusJakartaSansTextTheme().titleMedium?.copyWith(
+      //     color: kTextColor,
+      //     fontWeight: FontWeight.bold, 
+      //   ),
+      //   bodyMedium: GoogleFonts.plusJakartaSansTextTheme().bodyMedium?.copyWith(
+      //     color: kTextColor,
+      //     fontWeight: FontWeight.normal,
+      //   ),
+      // ),
       scaffoldBackgroundColor: Colors.white,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       inputDecorationTheme: inputDecorationTheme()
