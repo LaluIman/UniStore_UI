@@ -7,8 +7,18 @@ import 'package:google_fonts/google_fonts.dart';
 ThemeData themeData() {
     return ThemeData(
       textTheme: GoogleFonts.plusJakartaSansTextTheme().copyWith(
-        titleMedium: GoogleFonts.plusJakartaSansTextTheme().titleMedium?.copyWith(color: kTextColor),
-        bodyMedium: GoogleFonts.plusJakartaSansTextTheme().bodyMedium?.copyWith(color: kTextColor)
+        titleLarge: GoogleFonts.plusJakartaSansTextTheme().titleLarge?.copyWith(
+          color: kTextColor,
+          fontWeight: FontWeight.bold, 
+        ),
+        titleMedium: GoogleFonts.plusJakartaSansTextTheme().titleMedium?.copyWith(
+          color: kTextColor,
+          fontWeight: FontWeight.bold, 
+        ),
+        bodyMedium: GoogleFonts.plusJakartaSansTextTheme().bodyMedium?.copyWith(
+          color: kTextColor,
+          fontWeight: FontWeight.normal,
+        ),
       ),
       scaffoldBackgroundColor: Colors.white,
       visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -18,6 +28,9 @@ ThemeData themeData() {
 
   TextTheme textTheme() {
     return const TextTheme(
+      titleLarge: TextStyle(
+        color: kTextColor
+      ),
       titleMedium: TextStyle(
         color: kTextColor
       ),
