@@ -1,5 +1,6 @@
 import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/model/product_data.dart';
+import 'package:e_commerce/screens/details_screen/components/image_detail.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -14,78 +15,85 @@ class Body extends StatelessWidget {
       width: double.infinity,
       child: Column(
         children: [
-          ImageDetail(product: product)
+          ImageDetail(product: product),
+          roundedContainer(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: getPropScreenWidth(20)),
+                child: Text(
+                  product.title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: getPropScreenWidth(20),
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: getPropScreenWidth(18),
+                      vertical: getPropScreenHeight(10)),
+                  decoration: BoxDecoration(
+                      color: kSecondaryColor.withOpacity(0.3),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(getPropScreenWidth(25)),
+                        bottomLeft: Radius.circular(getPropScreenWidth(25)),
+                      )),
+                  child: Icon(Icons.favorite,
+                      size: 18,
+                      color: product.isFavourite == true
+                          ? Colors.red
+                          : Colors.white),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: getPropScreenWidth(20),
+                    right: getPropScreenWidth(64)),
+                child: Text(product.description),
+              ),
+            ],
+          ))
         ],
       ),
     );
   }
 }
 
-class ImageDetail extends StatefulWidget {
-  const ImageDetail({
+class roundedContainer extends StatelessWidget {
+  const roundedContainer({
     super.key,
-    required this.product,
+    required this.child,
   });
 
-  final Product product;
+  final Widget child;
 
-  @override
-  State<ImageDetail> createState() => _ImageDetailState();
-}
-
-class _ImageDetailState extends State<ImageDetail> {
-  int currentIndex = 0;
-  
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: getPropScreenWidth(238),
-          child: AspectRatio(
-            aspectRatio: 1,
-            child: Hero(
-              tag: "hero", 
-              child: Image.asset(widget.product.images[currentIndex]),
-            ),
-          ),
+    return Container(
+      margin: EdgeInsets.only(top: getPropScreenHeight(20)),
+      padding: EdgeInsets.only(top: getPropScreenHeight(20)),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: kThirdColor.withOpacity(0.3),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(getPropScreenWidth(25)),
+          topRight: Radius.circular(getPropScreenWidth(25)),
         ),
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: getPropScreenWidth(60)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: List.generate(
-              widget.product.images.length, 
-              (index) => smallImage(index: index) 
-            ),
+        boxShadow: [
+          BoxShadow(
+            color: kThirdColor.withOpacity(0.3),
+            blurRadius: 10,
+            offset: Offset(0, 5),
           ),
-        )
-      ],
-    );
-  }
-
-  Widget smallImage({required int index}) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          currentIndex = index; 
-        });
-      },
-      child: AnimatedContainer(
-        duration: defaultDuration,
-        margin: EdgeInsets.only(right: 16),
-        padding: EdgeInsets.all(8),
-        height: getPropScreenWidth(48),
-        width: getPropScreenWidth(48),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: currentIndex == index ? kPrimaryColor : Colors.grey,
-          ),
-        ),
-        child: Image.asset(widget.product.images[index]), 
+        ],
       ),
+      child: child,
     );
   }
 }
