@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:e_commerce/screens/home_screen/components/delivery_adress.dart';
 import 'package:e_commerce/screens/home_screen/components/icon_header.dart';
 import 'package:e_commerce/screens/home_screen/components/search.dart';
 import 'package:e_commerce/size_config.dart';
@@ -19,17 +18,7 @@ class headerComponent extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: getPropScreenWidth(20)),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              logo_header(),
-
-              Delivery_address()
-            ],
-          ),
-
-          SizedBox(height: getPropScreenHeight(10),),
-
+          //logo_header(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

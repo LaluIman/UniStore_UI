@@ -12,6 +12,8 @@ class BottomNavbar extends StatelessWidget {
       backgroundColor: Colors.white,
       type: BottomNavigationBarType.fixed,
       unselectedItemColor: Colors.grey,
+      selectedItemColor: Colors.black,
+      selectedFontSize: 15,
       items: [
         BottomNavigationBarItem(
           icon: SvgPicture.asset("assets/icons/Shop Icon.svg"),

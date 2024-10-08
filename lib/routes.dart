@@ -1,6 +1,7 @@
-
+import 'package:e_commerce/model/product_data.dart';
 import 'package:e_commerce/opening_screen_.dart';
 import 'package:e_commerce/screens/complete_profile_screen/complete_profile_screen.dart';
+import 'package:e_commerce/screens/details_screen/detail_screen.dart';
 import 'package:e_commerce/screens/forgot_password/forgot_password_screen.dart';
 import 'package:e_commerce/screens/home_screen/home_screen.dart';
 import 'package:e_commerce/screens/login_success/login_success_screen.dart';
@@ -19,5 +20,9 @@ final Map<String, WidgetBuilder> routes = {
   SignupScreen.routeName: (context) => const SignupScreen(),
   CompleteProfileScreen.routeName: (context) => const CompleteProfileScreen(),
   OtpScreen.routeName: (context) => const OtpScreen(),
-  HomeScreen.routeName: (context) => const HomeScreen()
+  HomeScreen.routeName: (context) => const HomeScreen(),
+  DetailScreen.routeName: (context) {
+    final product = ModalRoute.of(context)!.settings.arguments as Product;
+    return DetailScreen(product: product);
+  }
 };
