@@ -56,3 +56,5 @@ OutlineInputBorder otpOutlineInputBorder() {
 }
 
 const defaultDuration = Duration(milliseconds: 250);
+
+const moreLessColor = TextStyle(color: Colors.blue, fontWeight: FontWeight.w700);

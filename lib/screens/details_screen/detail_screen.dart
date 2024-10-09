@@ -1,3 +1,4 @@
+import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/model/product_data.dart';
 import 'package:e_commerce/screens/details_screen/components/body.dart';
 import 'package:flutter/material.dart';
@@ -11,31 +12,44 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new_rounded),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
+          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               children: [
-                Text("${product.rating}", style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16
-                ),),
-                SizedBox(
-                  width: 5,
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration:
+                      BoxDecoration(color: kThirdColor, shape: BoxShape.circle),
+                  child: Icon(
+                    Icons.favorite,
+                    size: 20,
+                    color: product.isFavourite ? Colors.red : Colors.white,
+                  ),
                 ),
-                Icon(Icons.star, color: Colors.yellow,)
+                SizedBox(
+                  width: 10,
+                ),
+                Icon(Icons.share, color: kSecondaryColor),
+                SizedBox(
+                  width: 10,
+                ),
+                Icon(Icons.more_horiz, color: kSecondaryColor)
               ],
             ),
           )
         ],
       ),
-      body: Body(product: product,),
+      body: Body(
+        product: product,
+      ),
     );
   }
 }

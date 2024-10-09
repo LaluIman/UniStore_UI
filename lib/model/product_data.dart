@@ -40,7 +40,7 @@ List<Product> demoProducts = [
     ],
     title: "Wireless Controller for PS4™",
     price: 64.99,
-    description: description,
+    description: "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing and streaming your epic gaming moments with friends and family. It's a great way to experience the thrill of gaming with precision and accuracy. The controller is designed to provide a comfortable grip and intuitive controls, making it easy to navigate through your games. With its advanced technology, you can enjoy a seamless gaming experience that's both fun and engaging. Whether you're a casual gamer or a serious enthusiast, this controller is sure to provide you with hours of entertainment and excitement.",
     rating: 4.8,
     isFavourite: true,
     isPopular: true,
@@ -58,7 +58,7 @@ List<Product> demoProducts = [
     ],
     title: "Nike Sport White - Man Pant",
     price: 50.5,
-    description: description,
+    description: "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing and streaming your epic gaming moments with friends and family. It's a great way to experience the thrill of gaming with precision and accuracy. The controller is designed to provide a comfortable grip and intuitive controls, making it easy to navigate through your games. With its advanced technology, you can enjoy a seamless gaming experience that's both fun and engaging. Whether you're a casual gamer or a serious enthusiast, this controller is sure to provide you with hours of entertainment and excitement.",
     rating: 4.1,
     isPopular: true,
   ),
@@ -75,7 +75,7 @@ List<Product> demoProducts = [
     ],
     title: "Gloves XC Omega - Polygon",
     price: 36.55,
-    description: description,
+    description: "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing and streaming your epic gaming moments with friends and family. It's a great way to experience the thrill of gaming with precision and accuracy. The controller is designed to provide a comfortable grip and intuitive controls, making it easy to navigate through your games. With its advanced technology, you can enjoy a seamless gaming experience that's both fun and engaging. Whether you're a casual gamer or a serious enthusiast, this controller is sure to provide you with hours of entertainment and excitement.",
     rating: 4.1,
     isFavourite: true,
     isPopular: true,
@@ -93,11 +93,9 @@ List<Product> demoProducts = [
     ],
     title: "Logitech Headset",
     price: 20.20,
-    description: description,
+    description: "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing and streaming your epic gaming moments with friends and family. It's a great way to experience the thrill of gaming with precision and accuracy. The controller is designed to provide a comfortable grip and intuitive controls, making it easy to navigate through your games. With its advanced technology, you can enjoy a seamless gaming experience that's both fun and engaging. Whether you're a casual gamer or a serious enthusiast, this controller is sure to provide you with hours of entertainment and excitement.",
     rating: 4.1,
     isFavourite: true,
   ),
 ];
-
-const String description =
-    "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing …";
+    

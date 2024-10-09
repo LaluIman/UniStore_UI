@@ -2,10 +2,11 @@
 
 import 'package:e_commerce/constant.dart';
 import 'package:flutter/material.dart';
+//mport 'package:google_fonts/google_fonts.dart';
 
 ThemeData themeData() {
     return ThemeData(
-      fontFamily: "PlusJakarta",
+      fontFamily: "PlusJakartaSans",
       appBarTheme: const AppBarTheme(
         color: Colors.white,
         elevation: 0,
@@ -14,20 +15,7 @@ ThemeData themeData() {
           color: kTextColor,
           fontSize: 18,
         )),
-      // textTheme: GoogleFonts.plusJakartaSansTextTheme().copyWith(
-      //   titleLarge: GoogleFonts.plusJakartaSansTextTheme().titleLarge?.copyWith(
-      //     color: kTextColor,
-      //     fontWeight: FontWeight.bold, 
-      //   ),
-      //   titleMedium: GoogleFonts.plusJakartaSansTextTheme().titleMedium?.copyWith(
-      //     color: kTextColor,
-      //     fontWeight: FontWeight.bold, 
-      //   ),
-      //   bodyMedium: GoogleFonts.plusJakartaSansTextTheme().bodyMedium?.copyWith(
-      //     color: kTextColor,
-      //     fontWeight: FontWeight.normal,
-      //   ),
-      // ),
+      //textTheme: GoogleFonts.plusJakartaSansTextTheme(),
       scaffoldBackgroundColor: Colors.white,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       inputDecorationTheme: inputDecorationTheme()
