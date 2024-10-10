@@ -45,8 +45,30 @@ List<Product> demoProducts = [
     isFavourite: true,
     isPopular: true,
   ),
+
   Product(
     id: 2,
+    images: [
+      "assets/images/Iphone14.png",
+      "assets/images/Iphone14(2).png",
+      "assets/images/Iphone14(3).png",
+      "assets/images/Iphone14(4).png",
+    ],
+    colors: [
+      const Color(0xFFF6625E),
+      const Color(0xFF836DB8),
+      const Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Iphone 14 pro max",
+    price: 1.593,
+    description: "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing and streaming your epic gaming moments with friends and family. It's a great way to experience the thrill of gaming with precision and accuracy. The controller is designed to provide a comfortable grip and intuitive controls, making it easy to navigate through your games. With its advanced technology, you can enjoy a seamless gaming experience that's both fun and engaging. Whether you're a casual gamer or a serious enthusiast, this controller is sure to provide you with hours of entertainment and excitement.",
+    rating: 4.3,
+    isFavourite: true,
+  ),
+  
+  Product(
+    id: 3,
     images: [
       "assets/images/Image Popular Product 2.png",
     ],
@@ -62,8 +84,9 @@ List<Product> demoProducts = [
     rating: 4.1,
     isPopular: true,
   ),
+
   Product(
-    id: 3,
+    id: 4,
     images: [
       "assets/images/glap.png",
     ],
@@ -71,7 +94,7 @@ List<Product> demoProducts = [
       const Color(0xFFF6625E),
       const Color(0xFF836DB8),
       const Color(0xFFDECB9C),
-      Colors.white,
+      Colors.black,
     ],
     title: "Gloves XC Omega - Polygon",
     price: 36.55,
@@ -80,8 +103,9 @@ List<Product> demoProducts = [
     isFavourite: true,
     isPopular: true,
   ),
+
   Product(
-    id: 4,
+    id: 5,
     images: [
       "assets/images/wireless headset.png",
     ],
@@ -89,7 +113,7 @@ List<Product> demoProducts = [
       const Color(0xFFF6625E),
       const Color(0xFF836DB8),
       const Color(0xFFDECB9C),
-      Colors.white,
+      Colors.black,
     ],
     title: "Logitech Headset",
     price: 20.20,
@@ -97,5 +121,42 @@ List<Product> demoProducts = [
     rating: 4.1,
     isFavourite: true,
   ),
+
+  Product(
+    id: 6,
+    images: [
+      "assets/images/Image Popular Product 3.png",
+    ],
+    colors: [
+      Colors.white,
+      const Color(0xFF836DB8),
+      const Color(0xFFDECB9C),
+      const Color(0xFFF6625E),
+    ],
+    title: "Bike helmet for Adult",
+    price: 17.20,
+    description: "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing and streaming your epic gaming moments with friends and family. It's a great way to experience the thrill of gaming with precision and accuracy. The controller is designed to provide a comfortable grip and intuitive controls, making it easy to navigate through your games. With its advanced technology, you can enjoy a seamless gaming experience that's both fun and engaging. Whether you're a casual gamer or a serious enthusiast, this controller is sure to provide you with hours of entertainment and excitement.",
+    rating: 3.5,
+    isFavourite: false,
+  ),
+
+  Product(
+    id: 7,
+    images: [
+      "assets/images/denim_jacket.png",
+    ],
+    colors: [
+      const Color(0xFFF6625E),
+      const Color(0xFF836DB8),
+      const Color(0xFFDECB9C),
+      const Color(0xFF4A6172),
+    ],
+    title: "Dark blue denim jacket",
+    price: 32.10,
+    description: "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing and streaming your epic gaming moments with friends and family. It's a great way to experience the thrill of gaming with precision and accuracy. The controller is designed to provide a comfortable grip and intuitive controls, making it easy to navigate through your games. With its advanced technology, you can enjoy a seamless gaming experience that's both fun and engaging. Whether you're a casual gamer or a serious enthusiast, this controller is sure to provide you with hours of entertainment and excitement.",
+    rating: 4.3,
+    isFavourite: false,
+  ),
+
 ];
     

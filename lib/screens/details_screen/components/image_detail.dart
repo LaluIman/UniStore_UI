@@ -33,8 +33,9 @@ class _ImageDetailState extends State<ImageDetail> {
             ),
           ),
         ),
+        SizedBox(height: getPropScreenHeight(10),),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: getPropScreenWidth(60)),
+          margin: EdgeInsets.symmetric(horizontal: getPropScreenWidth(75)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(
@@ -56,15 +57,15 @@ class _ImageDetailState extends State<ImageDetail> {
       },
       child: AnimatedContainer(
         duration: defaultDuration,
-        margin: EdgeInsets.only(right: 16),
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(4),
         height: getPropScreenWidth(48),
         width: getPropScreenWidth(48),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: currentIndex == index ? kPrimaryColor : Colors.grey,
+            color: currentIndex == index ? kPrimaryColor.withOpacity(0.4) : Colors.grey.withOpacity(0.2),
+            width: 2
           ),
         ),
         child: Image.asset(widget.product.images[index]), 

@@ -1,6 +1,7 @@
 import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/model/product_data.dart';
 import 'package:e_commerce/screens/details_screen/components/body.dart';
+import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -11,13 +12,23 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kforDetailBGColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new_rounded),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+      backgroundColor: kforDetailBGColor,
+        leading: Container(
+          margin: EdgeInsets.only(left: getPropScreenWidth(10)),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.circle
+          ),
+          child: Center(
+            child: IconButton(
+              icon: Icon(Icons.arrow_back_ios_new_rounded, size: 20,),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
         ),
         actions: [
           Padding(
