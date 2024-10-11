@@ -1,3 +1,5 @@
+import 'package:e_commerce/model/cart_data.dart';
+import 'package:e_commerce/screens/cart_screen/components/cart_item.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -10,6 +12,6 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return CartItem(cart: listCart[0],); //belum kelar
   }
 }
