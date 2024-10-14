@@ -28,23 +28,23 @@ class IconHeader extends StatelessWidget {
           ),
           child: SvgPicture.asset(svgIcon),
         ),
-        if (trigger != null)
+        if (trigger != null && trigger != "0")
         Positioned(
             right: 0,
             top: -3,
             child: Container(
-              width: getPropScreenWidth(17),
-              height: getPropScreenWidth(17),
+              width: getPropScreenWidth(18),
+              height: getPropScreenWidth(18),
               decoration: BoxDecoration(
                 color: Colors.red,
                 shape: BoxShape.circle,
-                border: Border.all(width: 1.3, color: Colors.white),
+                border: Border.all(width: 1.5, color: Colors.white),
               ),
               child: Center(
                 child: Text(
                   trigger!,
                   style: TextStyle(
-                      fontSize: getPropScreenWidth(10),
+                      fontSize: getPropScreenWidth(12),
                       color: Colors.white,
                       height: 1,
                       fontWeight: FontWeight.bold),

@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:e_commerce/model/cart_data.dart';
 import 'package:e_commerce/screens/cart_screen/cart_screen.dart';
 import 'package:e_commerce/screens/home_screen/components/icon_header.dart';
 import 'package:e_commerce/screens/home_screen/components/search.dart';
@@ -30,7 +31,7 @@ class headerComponent extends StatelessWidget {
                 },
                 child: IconHeader(
                   svgIcon: "assets/icons/Cart Icon.svg", 
-                  trigger: "3",
+                  trigger: listCart.length.toString(),
                 ),
               ),
               IconHeader(

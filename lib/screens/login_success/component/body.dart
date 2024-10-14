@@ -2,6 +2,7 @@
 
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/screens/home_screen/home_screen.dart';
+import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -31,12 +32,14 @@ class Body extends StatelessWidget {
             height: 50,
           ),
 
-          SizedBox(
-            height: 50,
-            width: 250,
-            child: DefaultButton(text: "Continue", press: () {
-              Navigator.pushNamed(context, HomeScreen.routeName);
-            }),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: getPropScreenWidth(10)),
+            child: SizedBox(
+              height: 60,
+              child: DefaultButton(text: "Continue", press: () {
+                Navigator.pushNamed(context, HomeScreen.routeName);
+              }),
+            ),
           ),
         ],
       ),
