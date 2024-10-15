@@ -84,7 +84,7 @@ class _BodyState extends State<Body> {
                       curve: Curves.fastOutSlowIn,
                     );
                   } else {
-                    Navigator.pushNamed(context, SignInScreen.routeName);
+                     Navigator.pushNamedAndRemoveUntil(context, SignInScreen.routeName, (Route<dynamic> routes) => false);
                   }
                 },  
                 child: Row(

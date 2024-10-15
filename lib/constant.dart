@@ -17,7 +17,8 @@ const kPrimaryGradientColor = LinearGradient(
 const kSecondaryColor = Color(0xff979797);
 const kThirdColor = Color.fromRGBO(240, 240, 240, 1);
 const kforDetailBGColor =Color.fromARGB(255, 247, 247, 247);
-const kTextColor = Color(0xff757575);
+const inactiveColor =Color.fromARGB(255, 34, 34, 34);
+const kTextColor = Color.fromARGB(255, 66, 66, 66);
 const kAnimationDuration = Duration(milliseconds: 310);
 
 final headingStyle = TextStyle(

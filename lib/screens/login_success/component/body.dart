@@ -37,7 +37,7 @@ class Body extends StatelessWidget {
             child: SizedBox(
               height: 60,
               child: DefaultButton(text: "Continue", press: () {
-                Navigator.pushNamed(context, HomeScreen.routeName);
+                Navigator.pushNamedAndRemoveUntil(context, HomeScreen.routeName, (Route<dynamic> routes) => false);
               }),
             ),
           ),
