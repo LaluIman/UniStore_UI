@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:e_commerce/constant.dart';
+// import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class SplashContent extends StatelessWidget {
               "Uni",
               style: TextStyle(
                 fontSize: getPropScreenWidth(36),
-                color: kPrimaryColor,
+                // color: kPrimaryColor,
                 fontWeight: FontWeight.bold
               ),
             ),
@@ -32,7 +32,7 @@ class SplashContent extends StatelessWidget {
               "Store",
               style: TextStyle(
                 fontSize: getPropScreenWidth(36),
-                color: kPrimaryColor,
+                // color: kPrimaryColor,
                 fontWeight: FontWeight.w300
               ),
             ),
@@ -44,7 +44,7 @@ class SplashContent extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: getPropScreenWidth(16),
-            color: kTextColor
+            // color: kTextColor
           ),
         ),
          SizedBox(

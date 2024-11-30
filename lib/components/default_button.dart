@@ -1,6 +1,8 @@
 import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
@@ -12,10 +14,12 @@ class DefaultButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     return ElevatedButton(
       onPressed: press,
       style: ElevatedButton.styleFrom(
-        backgroundColor: kPrimaryColor,
+        backgroundColor: themeProvider.isDarkMode ? Colors.grey.shade900 : kPrimaryColor,
         minimumSize: Size(double.infinity, getPropScreenHeight(56)),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
       ),

@@ -61,7 +61,7 @@ class _ImageDetailState extends State<ImageDetail> {
         height: getPropScreenWidth(48),
         width: getPropScreenWidth(48),
         decoration: BoxDecoration(
-          color: Colors.white,
+          // color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: currentIndex == index ? kPrimaryColor.withOpacity(0.4) : Colors.grey.withOpacity(0.2),

@@ -69,7 +69,7 @@ class _BodyState extends State<Body> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  // backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   shape:  currentPage < splashData.length - 1 ? CircleBorder() : RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                   padding: EdgeInsets.symmetric(
@@ -117,7 +117,7 @@ class _BodyState extends State<Body> {
       height: currentPage == index ? 25 :  10,
       width: 10,
       decoration: BoxDecoration(
-        color: currentPage == index ? Colors.black : Color(0xffd8d8d8),
+        color: currentPage == index ? const Color.fromARGB(255, 113, 113, 113) : Color(0xffd8d8d8),
         borderRadius: BorderRadius.circular(5)
       ),
     );

@@ -35,7 +35,8 @@ class _CartItemState extends State<CartItem> {
                       padding: EdgeInsets.all(getPropScreenWidth(10)),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: kSecondaryColor.withOpacity(0.2)),
+                          color: kSecondaryColor.withOpacity(0.2)
+                        ),
                       child: Image.asset(
                         widget.cart.product.images[0],
                       ),
@@ -51,7 +52,6 @@ class _CartItemState extends State<CartItem> {
                     Text(
                       widget.cart.product.title,
                       style: TextStyle(
-                          color: Colors.black,
                           fontSize: getPropScreenWidth(16),
                           fontWeight: FontWeight.w500),
                     ),
@@ -65,7 +65,7 @@ class _CartItemState extends State<CartItem> {
                           style: TextStyle(
                               fontSize: getPropScreenWidth(16),
                               fontWeight: FontWeight.w600,
-                              color: kPrimaryColor),
+                              ),
                         ),
                         
                         // Row(

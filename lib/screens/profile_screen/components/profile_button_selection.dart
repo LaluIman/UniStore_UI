@@ -1,7 +1,9 @@
 import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class ProfileButtonSelection extends StatelessWidget {
   const ProfileButtonSelection({
@@ -16,6 +18,8 @@ class ProfileButtonSelection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    
     return GestureDetector(
       onTap: press,
       child: Container(
@@ -29,7 +33,7 @@ class ProfileButtonSelection extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SvgPicture.asset(svgIcon),
+            SvgPicture.asset(svgIcon, color: themeProvider.isDarkMode ? Colors.white : Colors.black,),
             SizedBox(
               width: getPropScreenWidth(15),
             ),

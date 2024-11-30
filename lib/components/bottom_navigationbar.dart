@@ -1,26 +1,34 @@
+import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:e_commerce/screens/home_screen/home_screen.dart';
 import 'package:e_commerce/screens/profile_screen/profile_screen.dart';
-import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/enum.dart';
+import 'package:provider/provider.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({
-    Key? key,
+    super.key,
     required this.menu,
-  }) : super(key: key);
+  });
 
   final MenuState menu;
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final bool isDarkMode = themeProvider.isDarkMode;
+
+    final Color selectedIconColor = isDarkMode ? Colors.white : Colors.black;
+    final Color unselectedIconColor =
+        isDarkMode ? Colors.grey[600]! : Colors.grey[600]!;
+
     return BottomNavigationBar(
-      backgroundColor: Colors.white,
+      backgroundColor: isDarkMode ? Color(0xFF100F13): Colors.white,
       type: BottomNavigationBarType.fixed,
       currentIndex: MenuState.values.indexOf(menu),
-      selectedItemColor: kPrimaryColor,
-      unselectedItemColor: inactiveColor,
+      selectedItemColor: selectedIconColor,
+      unselectedItemColor: unselectedIconColor,
       showSelectedLabels: true,
       showUnselectedLabels: true,
       onTap: (index) {
@@ -39,50 +47,46 @@ class CustomBottomNavigationBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/icons/Shop Icon.svg',
-            colorFilter: ColorFilter.mode(
-              menu == MenuState.home ? kPrimaryColor : inactiveColor,
-              BlendMode.srcIn,
-            ),
+            color: menu == MenuState.home
+                ? selectedIconColor
+                : unselectedIconColor,
           ),
           activeIcon: SvgPicture.asset(
             'assets/icons/Shop Icon.svg',
-            colorFilter: ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+            color: selectedIconColor,
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'assets/icons/Bag.svg',
-            colorFilter: ColorFilter.mode(inactiveColor, BlendMode.srcIn),
-          ),
+          icon: SvgPicture.asset('assets/icons/Bag.svg',
+              color: unselectedIconColor),
           activeIcon: SvgPicture.asset(
             'assets/icons/Bag.svg',
-            colorFilter: ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+            color: selectedIconColor,
           ),
           label: 'Bag',
         ),
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/icons/Chat bubble Icon.svg',
-            colorFilter: ColorFilter.mode(inactiveColor, BlendMode.srcIn),
+            color: unselectedIconColor,
           ),
           activeIcon: SvgPicture.asset(
             'assets/icons/Chat bubble Icon.svg',
-            colorFilter: ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+            color: selectedIconColor,
           ),
           label: 'Chat',
         ),
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/icons/Account.svg',
-            colorFilter: ColorFilter.mode(
-              menu == MenuState.profile ? kPrimaryColor : inactiveColor,
-              BlendMode.srcIn,
-            ),
+            color: menu == MenuState.profile
+                ? selectedIconColor
+                : unselectedIconColor,
           ),
           activeIcon: SvgPicture.asset(
             'assets/icons/Account.svg',
-            colorFilter: ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+            color: selectedIconColor,
           ),
           label: 'Profile',
         ),

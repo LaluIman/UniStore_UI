@@ -41,7 +41,7 @@ class ProductCard extends StatelessWidget {
                 height: 50,
                 child: Text(
                   product.title,
-                  style: TextStyle(color: Colors.black, fontSize: 15),
+                  style: TextStyle(fontSize: 15),
                   maxLines: 2,
                 ),
               ),
@@ -53,7 +53,7 @@ class ProductCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: getPropScreenWidth(18),
                       fontWeight: FontWeight.w600,
-                      color: kPrimaryColor,
+                      // color: kPrimaryColor,
                     ),
                   ),
                   InkWell(

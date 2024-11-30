@@ -3,6 +3,7 @@
 import 'package:e_commerce/enum.dart';
 import 'package:e_commerce/screens/home_screen/components/body.dart';
 import 'package:e_commerce/components/bottom_navigationbar.dart';
+import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     SizeConfig().init(context);
     return Scaffold(
       body: Body(),
 

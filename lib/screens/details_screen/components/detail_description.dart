@@ -93,7 +93,6 @@ class PriceContainer extends StatelessWidget {
                 "\$${product.price}",
                 style: TextStyle(
                     fontSize: getPropScreenWidth(18),
-                    color: Colors.black,
                     fontWeight: FontWeight.w700),
               ),
               SizedBox(

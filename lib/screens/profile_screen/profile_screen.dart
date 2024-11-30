@@ -2,7 +2,10 @@ import 'package:e_commerce/components/bottom_navigationbar.dart';
 import 'package:e_commerce/enum.dart';
 import 'package:e_commerce/screens/profile_screen/components/body.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/theme_provider.dart';
+// import 'package:e_commerce/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -10,17 +13,35 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     return Scaffold(
-     appBar: AppBar(
+      appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: Text("Profile", style: TextStyle(
-          fontSize: getPropScreenWidth(20),
-          fontWeight: FontWeight.w500
-        ),),
+        title: Text(
+          "Profile",
+          style: TextStyle(
+              fontSize: getPropScreenWidth(20), fontWeight: FontWeight.w500, color: themeProvider.isDarkMode? Colors.white : Colors.black),
+        ),
+        backgroundColor: themeProvider.isDarkMode ? Color(0xFF100F13) : Colors.transparent,
+        iconTheme: IconThemeData(
+          color: themeProvider.isDarkMode ? Colors.white : Colors.black,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              themeProvider.toggleTheme(!themeProvider.isDarkMode);
+            },
+            icon: Icon(
+              themeProvider.isDarkMode ? Icons.wb_sunny : Icons.mode_night,
+            ),
+          )
+        ],
       ),
       body: Body(),
-      bottomNavigationBar: CustomBottomNavigationBar(menu: MenuState.profile)
+      bottomNavigationBar:
+          CustomBottomNavigationBar(menu: MenuState.profile),
     );
   }
 }

@@ -16,7 +16,7 @@ class roundedContainer extends StatelessWidget {
       padding: EdgeInsets.only(top: getPropScreenHeight(20), bottom: getPropScreenHeight(20)),
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.white,
+        // color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(getPropScreenWidth(30)),
           topRight: Radius.circular(getPropScreenWidth(30)),

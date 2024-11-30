@@ -4,7 +4,6 @@ import 'package:e_commerce/screens/sign_in/sign_in_screen.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 class Body extends StatefulWidget {
   const Body({super.key});
 
@@ -15,6 +14,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
+
     return SingleChildScrollView(
       child: Column(
         children: [

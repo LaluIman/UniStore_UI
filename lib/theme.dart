@@ -1,12 +1,11 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:e_commerce/constant.dart';
 import 'package:flutter/material.dart';
-//mport 'package:google_fonts/google_fonts.dart';
 
-ThemeData themeData() {
+themeData(bool isDarkMode) {
     return ThemeData(
       fontFamily: "PlusJakartaSans",
+      brightness: isDarkMode ? Brightness.dark : Brightness.light,
       appBarTheme: const AppBarTheme(
         color: Colors.white,
         elevation: 0,
@@ -16,7 +15,7 @@ ThemeData themeData() {
           fontSize: 18,
         )),
       //textTheme: GoogleFonts.plusJakartaSansTextTheme(),
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: isDarkMode ? Color(0xFF100F13) : Colors.white,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       inputDecorationTheme: inputDecorationTheme()
     );
@@ -43,13 +42,14 @@ ThemeData themeData() {
           gapPadding: 5
         );
     return InputDecorationTheme(
+
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 42,
           vertical: 20
         ),
-        labelStyle: TextStyle(
-          color: kPrimaryColor
-        ),
+        // labelStyle: TextStyle(
+        //   color: kPrimaryColor
+        // ),
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
         border: outlineInputBorder

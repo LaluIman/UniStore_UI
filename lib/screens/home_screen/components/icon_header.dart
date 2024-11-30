@@ -1,7 +1,9 @@
 import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class IconHeader extends StatelessWidget {
   const IconHeader({
@@ -15,6 +17,7 @@ class IconHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -23,10 +26,10 @@ class IconHeader extends StatelessWidget {
           width: getPropScreenWidth(46),
           padding: EdgeInsets.all(getPropScreenWidth(12)),
           decoration: BoxDecoration(
-            color: kSecondaryColor.withOpacity(0.1),
+            color: themeProvider.isDarkMode ? Colors.grey.shade700 : kSecondaryColor.withOpacity(0.1),
             shape: BoxShape.circle,
           ),
-          child: SvgPicture.asset(svgIcon),
+          child: SvgPicture.asset(svgIcon, color: themeProvider.isDarkMode ? Colors.white : Colors.black,),
         ),
         if (trigger != null && trigger != "0")
         Positioned(
@@ -38,7 +41,7 @@ class IconHeader extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.red,
                 shape: BoxShape.circle,
-                border: Border.all(width: 1.5, color: Colors.white),
+                border: Border.all(width: 1.5, color: themeProvider.isDarkMode ? Colors.black : Colors.white),
               ),
               child: Center(
                 child: Text(

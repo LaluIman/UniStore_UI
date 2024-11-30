@@ -1,7 +1,9 @@
 import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class Categories extends StatelessWidget {
   @override
@@ -44,6 +46,8 @@ class itemCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    
     return SizedBox(
       width: getPropScreenWidth(55),
       child: Column(
@@ -53,10 +57,10 @@ class itemCategory extends StatelessWidget {
             height: getPropScreenHeight(55),
             width: getPropScreenWidth(55),
             decoration: BoxDecoration(
-              color: color,
+              color: themeProvider.isDarkMode ? Colors.grey.shade700 : color ,
               shape: BoxShape.circle
             ),
-            child: SvgPicture.asset(icon),
+            child: SvgPicture.asset(icon, color: themeProvider.isDarkMode ? Colors.white : (name == "More" ? Colors.white : Colors.black)),
           ),
           SizedBox(
             height: 10,

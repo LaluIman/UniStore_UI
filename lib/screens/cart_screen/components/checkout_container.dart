@@ -1,7 +1,9 @@
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class BottomCheckOut extends StatelessWidget {
   const BottomCheckOut({
@@ -10,13 +12,15 @@ class BottomCheckOut extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(35),
           topRight: Radius.circular(35),
         ),
-        color: const Color.fromARGB(255, 247, 247, 247),
+        color: themeProvider.isDarkMode ? Colors.black : Color.fromARGB(255, 247, 247, 247) ,
       ),
       child: Padding(
         padding: EdgeInsets.symmetric(
