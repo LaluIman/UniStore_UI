@@ -24,7 +24,6 @@ class detailDescription extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: getPropScreenWidth(20),
-              color: Colors.black,
             ),
           ),
         ),

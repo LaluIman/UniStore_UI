@@ -24,7 +24,7 @@ class Body extends StatelessWidget {
           const Text("Success!", style: TextStyle(
             fontSize: 35,
             fontWeight: FontWeight.bold,
-            color: Colors.black
+            // color: Colors.black
           ),
           ),
 

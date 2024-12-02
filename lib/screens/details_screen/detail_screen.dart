@@ -45,7 +45,7 @@ class DetailScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(5),
                   decoration:
-                      BoxDecoration( shape: BoxShape.circle),
+                      BoxDecoration(color: themeProvider.isDarkMode ? Colors.grey.shade800 : Colors.grey.shade400, shape: BoxShape.circle),
                   child: Icon(
                     Icons.favorite,
                     size: 20,

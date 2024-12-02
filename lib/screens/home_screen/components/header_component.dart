@@ -1,11 +1,13 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:e_commerce/model/cart_data.dart';
+// import 'package:e_commerce/model/cart_data.dart';
 import 'package:e_commerce/screens/cart_screen/cart_screen.dart';
 import 'package:e_commerce/screens/home_screen/components/icon_header.dart';
 import 'package:e_commerce/screens/home_screen/components/search.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/cart_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -29,9 +31,12 @@ class headerComponent extends StatelessWidget {
                 onTap: (){
                   Navigator.pushNamed(context, CartScreen.routeName);
                 },
-                child: IconHeader(
-                  svgIcon: "assets/icons/Cart Icon.svg", 
-                  trigger: listCart.length.toString(),
+                child: Consumer<CartProvider>(
+                  builder: (context, cart, child) =>
+                  IconHeader(
+                    svgIcon: "assets/icons/Cart Icon.svg", 
+                    trigger: cart.cartItems.length.toString(),
+                  ),
                 ),
               ),
               IconHeader(

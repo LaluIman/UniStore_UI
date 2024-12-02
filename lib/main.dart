@@ -3,6 +3,7 @@ import 'package:e_commerce/opening_screen_.dart';
 import 'package:e_commerce/routes.dart';
 import 'package:e_commerce/screens/home_screen/home_screen.dart';
 import 'package:e_commerce/state_managements/auth_provider.dart';
+import 'package:e_commerce/state_managements/cart_provider.dart';
 import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:e_commerce/theme.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ Future<void> main() async {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => ThemeProvider()),
     ChangeNotifierProvider(create: (context) => AuthProvider()),
+    ChangeNotifierProvider(create: (context) => CartProvider()), 
   ], child: MainApp(isLoggedIn: isLoggedIn)));
 }
 

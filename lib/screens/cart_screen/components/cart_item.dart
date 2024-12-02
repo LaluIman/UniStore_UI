@@ -67,6 +67,21 @@ class _CartItemState extends State<CartItem> {
                               fontWeight: FontWeight.w600,
                               ),
                         ),
+                        SizedBox(width: 5,),
+                        Container(
+                          width: 6,
+                          height: 6,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade500,
+                            shape: BoxShape.circle
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        Text("x ${widget.cart.numOfItem}", style: TextStyle(
+                          fontSize: getPropScreenWidth(16),
+                              fontWeight: FontWeight.w600,
+
+                        ),)
                         
                         // Row(
                         //   children: [
