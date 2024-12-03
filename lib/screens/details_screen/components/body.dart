@@ -8,6 +8,7 @@ import 'package:e_commerce/screens/details_screen/components/image_detail.dart';
 import 'package:e_commerce/screens/details_screen/components/rounded_container.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:e_commerce/state_managements/cart_provider.dart';
+import 'package:e_commerce/state_managements/favorite_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -102,6 +103,23 @@ class _BodyState extends State<Body> {
                             .addCartItem(Cart(
                                 product: widget.product,
                                 numOfItem: totalSelected));
+                        if(widget.product.isFavourite){
+                          Provider.of<FavoriteProvider>(context, listen: false).toggleFavouriteStatus(widget.product.id);
+                        }
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Success add to cart!", style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold
+                          ),),
+                          backgroundColor: Colors.green,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                          behavior: SnackBarBehavior.floating,
+                          margin: EdgeInsets.all(20),
+                          duration: Duration(milliseconds: 2000),
+                          elevation: 30,
+                          )
+                        );
                       }),
                 )
               ],

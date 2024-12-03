@@ -1,9 +1,10 @@
 //import 'package:e_commerce/constant.dart';
+import 'package:e_commerce/components/bottom_navigationbar.dart';
 import 'package:e_commerce/opening_screen_.dart';
 import 'package:e_commerce/routes.dart';
-import 'package:e_commerce/screens/home_screen/home_screen.dart';
 import 'package:e_commerce/state_managements/auth_provider.dart';
 import 'package:e_commerce/state_managements/cart_provider.dart';
+import 'package:e_commerce/state_managements/favorite_provider.dart';
 import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:e_commerce/theme.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ Future<void> main() async {
     ChangeNotifierProvider(create: (context) => ThemeProvider()),
     ChangeNotifierProvider(create: (context) => AuthProvider()),
     ChangeNotifierProvider(create: (context) => CartProvider()), 
+    ChangeNotifierProvider(create: (context) => FavoriteProvider()), 
   ], child: MainApp(isLoggedIn: isLoggedIn)));
 }
 
@@ -32,7 +34,7 @@ class MainApp extends StatelessWidget {
       builder: (context, theme, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: themeData(theme.isDarkMode),
-        initialRoute: isLoggedIn ? HomeScreen.routeName : OpeningScreen.routeName,
+        initialRoute: isLoggedIn ? CustomNavigationBar.routeName : OpeningScreen.routeName,
         routes: routes,
       ));
   }

@@ -17,12 +17,25 @@ class CartProvider extends ChangeNotifier {
   }
 
   void addCartItem(Cart cartItem) {
-    final index = _listCart.indexWhere((item) => item.product.id == cartItem.product.id);
+    final index =
+        _listCart.indexWhere((item) => item.product.id == cartItem.product.id);
     if (index != -1) {
       _listCart[index].numOfItem += cartItem.numOfItem;
-    }else{
+    } else {
       _listCart.add(cartItem);
     }
+    notifyListeners();
+  }
+
+  //total counting boy
+  double get totalPrice => double.parse(
+    _listCart.fold(0.0,
+      (total, current) => total + current.product.price * current.numOfItem
+    ).toStringAsFixed(2)
+  );
+
+  void clearCart(){
+    _listCart.clear();
     notifyListeners();
   }
 }

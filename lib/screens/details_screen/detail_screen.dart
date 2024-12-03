@@ -2,6 +2,7 @@ import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/model/product_data.dart';
 import 'package:e_commerce/screens/details_screen/components/body.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/favorite_provider.dart';
 import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,24 +14,28 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final themeProvider = Provider.of<ThemeProvider>(context);
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       // backgroundColor: kforDetailBGColor,
       appBar: AppBar(
-        backgroundColor: themeProvider.isDarkMode ? Color(0xFF100F13) : Colors.transparent,
+        backgroundColor:
+            themeProvider.isDarkMode ? Color(0xFF100F13) : Colors.transparent,
         iconTheme: IconThemeData(
           color: themeProvider.isDarkMode ? Colors.white : Colors.black,
         ),
-      // backgroundColor: kforDetailBGColor,
+        // backgroundColor: kforDetailBGColor,
         leading: Container(
           margin: EdgeInsets.only(left: getPropScreenWidth(10)),
           decoration: BoxDecoration(
-            // color: Colors.white,
-            shape: BoxShape.circle
-          ),
+              // color: Colors.white,
+              shape: BoxShape.circle),
           child: Center(
             child: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new_rounded, size: 20,),
+              icon: Icon(
+                Icons.arrow_back_ios_new_rounded,
+                size: 20,
+                color: themeProvider.isDarkMode ? Colors.white : Colors.black,
+              ),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -44,12 +49,22 @@ class DetailScreen extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.all(5),
-                  decoration:
-                      BoxDecoration(color: themeProvider.isDarkMode ? Colors.grey.shade800 : Colors.grey.shade400, shape: BoxShape.circle),
-                  child: Icon(
-                    Icons.favorite,
-                    size: 20,
-                    color: product.isFavourite ? Colors.red : Colors.white,
+                  decoration: BoxDecoration(
+                      color: themeProvider.isDarkMode
+                          ? Colors.grey.shade800
+                          : Colors.grey.shade400,
+                      shape: BoxShape.circle),
+                  child: Consumer<FavoriteProvider>(
+                    builder: (context, favorites, child) => GestureDetector(
+                      onTap: () {
+                        favorites.toggleFavouriteStatus(product.id);
+                      },
+                      child: Icon(
+                        Icons.favorite,
+                        size: 20,
+                        color: product.isFavourite ? Colors.red : Colors.white,
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(

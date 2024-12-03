@@ -6,7 +6,7 @@ class Product {
   final List<String> images;
   final List<Color> colors;
   final double rating, price;
-  final bool isFavourite, isPopular;
+  bool isFavourite, isPopular;
 
   Product({
     required this.id,
@@ -42,7 +42,7 @@ List<Product> demoProducts = [
     price: 64.99,
     description: "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing and streaming your epic gaming moments with friends and family. It's a great way to experience the thrill of gaming with precision and accuracy. The controller is designed to provide a comfortable grip and intuitive controls, making it easy to navigate through your games. With its advanced technology, you can enjoy a seamless gaming experience that's both fun and engaging. Whether you're a casual gamer or a serious enthusiast, this controller is sure to provide you with hours of entertainment and excitement.",
     rating: 4.8,
-    isFavourite: false,
+    isFavourite: true,
     isPopular: true,
   ),
 
@@ -61,7 +61,7 @@ List<Product> demoProducts = [
       Colors.white,
     ],
     title: "Iphone 14 pro max",
-    price: 1.593,
+    price: 1590.00,
     description: "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing and streaming your epic gaming moments with friends and family. It's a great way to experience the thrill of gaming with precision and accuracy. The controller is designed to provide a comfortable grip and intuitive controls, making it easy to navigate through your games. With its advanced technology, you can enjoy a seamless gaming experience that's both fun and engaging. Whether you're a casual gamer or a serious enthusiast, this controller is sure to provide you with hours of entertainment and excitement.",
     rating: 4.3,
     isFavourite: true,

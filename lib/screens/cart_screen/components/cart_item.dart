@@ -83,38 +83,6 @@ class _CartItemState extends State<CartItem> {
 
                         ),)
                         
-                        // Row(
-                        //   children: [
-                        //     RoundedIconBtn(
-                        //         icon: Icons.remove,
-                        //         press: totalSelected > 1
-                        //             ? () {
-                        //                 setState(() {
-                        //                   totalSelected--;
-                        //                 });
-                        //               }
-                        //             : null),
-                        //     SizedBox(
-                        //       width: 10,
-                        //     ),
-                        //     Text(
-                        //       "${totalSelected}",
-                        //       style: TextStyle(
-                        //           fontSize: 20, fontWeight: FontWeight.w600),
-                        //     ),
-                        //     SizedBox(
-                        //       width: 10,
-                        //     ),
-                        //     RoundedIconBtn(
-                        //       icon: Icons.add,
-                        //       press: () {
-                        //         setState(() {
-                        //           totalSelected++;
-                        //         });
-                        //       },
-                        //     ),
-                        //   ],
-                        // )
                       ],
                     ),
                   ],

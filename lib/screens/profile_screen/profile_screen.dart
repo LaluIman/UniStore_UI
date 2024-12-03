@@ -1,5 +1,4 @@
-import 'package:e_commerce/components/bottom_navigationbar.dart';
-import 'package:e_commerce/enum.dart';
+
 import 'package:e_commerce/screens/profile_screen/components/body.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:e_commerce/state_managements/theme_provider.dart';
@@ -40,8 +39,6 @@ class ProfileScreen extends StatelessWidget {
         ],
       ),
       body: Body(),
-      bottomNavigationBar:
-          CustomBottomNavigationBar(menu: MenuState.profile),
     );
   }
 }

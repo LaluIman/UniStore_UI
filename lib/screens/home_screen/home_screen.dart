@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:e_commerce/enum.dart';
 import 'package:e_commerce/screens/home_screen/components/body.dart';
-import 'package:e_commerce/components/bottom_navigationbar.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +14,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Body(),
 
-      bottomNavigationBar: CustomBottomNavigationBar(menu: MenuState.home)
     );
   }
 }
