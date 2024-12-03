@@ -20,7 +20,6 @@ class Body extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: getPropScreenHeight(20)),
             headerComponent(),
             SizedBox(height: getPropScreenHeight(20)),
             cashbackBanner(),

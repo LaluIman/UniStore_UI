@@ -1,7 +1,9 @@
 import 'package:e_commerce/constant.dart';
 import 'package:e_commerce/model/product_data.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/favorite_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -56,26 +58,30 @@ class ProductCard extends StatelessWidget {
                       // color: kPrimaryColor,
                     ),
                   ),
-                  InkWell(
-                      borderRadius: BorderRadius.circular(50),
-                      onTap: () {},
-                      child: Container(
-                        padding: EdgeInsets.all(getPropScreenWidth(8)),
-                        decoration: BoxDecoration(
-                          color: product.isFavourite
-                              ? kPrimaryColor.withOpacity(0.10)
-                              : kSecondaryColor.withOpacity(0.1),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.favorite,
-                          size: 20,
-                          color: product.isFavourite
-                              ? Colors.red
-                              : Colors.white,
+                  Consumer<FavoriteProvider>(
+                    builder: (context, favorites, child) =>InkWell(
+                        borderRadius: BorderRadius.circular(50),
+                        onTap: () {
+                          favorites.toggleFavouriteStatus(product.id);
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(getPropScreenWidth(8)),
+                          decoration: BoxDecoration(
+                            color: product.isFavourite
+                                ? kPrimaryColor.withOpacity(0.10)
+                                : kSecondaryColor.withOpacity(0.1),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.favorite,
+                            size: 20,
+                            color: product.isFavourite
+                                ? Colors.red
+                                : Colors.white,
+                          ),
                         ),
                       ),
-                    ),
+                  ),
                 ],
               )
             ],

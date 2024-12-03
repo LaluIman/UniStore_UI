@@ -8,7 +8,6 @@ import 'package:e_commerce/size_config.dart';
 import 'package:e_commerce/state_managements/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({super.key});
@@ -24,24 +23,17 @@ class _SignInFormState extends State<SignInForm> {
   final List<String> errors = [];
 
   bool remember = false;
-
-  Future<void> saveEmail(String email) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('email', email);
-    await prefs.setBool('isLoggedIn', true);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Form(
         key: _formKey,
         child: Column(children: [
-          // Email field
+          //email Firld
           emailForm(),
           SizedBox(
             height: getPropScreenHeight(30),
           ),
-          // Password field
+          //password field
           passwordForm(),
           SizedBox(
             height: getPropScreenHeight(30),
@@ -50,7 +42,7 @@ class _SignInFormState extends State<SignInForm> {
           SizedBox(
             height: getPropScreenHeight(20),
           ),
-          // Error message
+          //error message
           ErrorForm(
             errors: errors,
           ),
@@ -59,15 +51,13 @@ class _SignInFormState extends State<SignInForm> {
           ),
           DefaultButton(
               text: "Sign in",
-              press: () async {
+              press: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
                 }
                 if (errors.isEmpty) {
-                  // Save email and navigate on successful login
                   Provider.of<AuthProvider>(context, listen: false)
-                      .login(email!);
-                  await saveEmail(email!);
+                      .setAuth(true);
                   Navigator.pushNamed(context, LoginSuccessScreen.routeName);
                 }
               })
