@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:e_commerce/components/bottom_navigationbar.dart';
 import 'package:e_commerce/components/default_button.dart';
-import 'package:e_commerce/screens/home_screen/home_screen.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +37,7 @@ class Body extends StatelessWidget {
             child: SizedBox(
               height: 60,
               child: DefaultButton(text: "Continue", press: () {
-                Navigator.pushNamedAndRemoveUntil(context, HomeScreen.routeName, (Route<dynamic> routes) => false);
+                Navigator.pushNamedAndRemoveUntil(context, CustomNavigationBar.routeName, (Route<dynamic> routes) => false);
               }),
             ),
           ),

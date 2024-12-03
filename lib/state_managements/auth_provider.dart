@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AuthProvider extends ChangeNotifier{
-  bool _isLoggedIn = false;
-  bool get isLoggedIn => _isLoggedIn;
+class AuthProvider extends ChangeNotifier {
+  String? _email;
 
-  AuthProvider(){
-    loadAuth();
-  }
+  String? get email => _email;
 
-  void loadAuth() async{
+  Future<void> login(String email) async {
+    _email = email;
+
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    _isLoggedIn = prefs.getBool("isLoggedIn") ?? false;
-    print("loadAuth: $_isLoggedIn");
+    await prefs.setString('email', email);
+    await prefs.setBool('isLoggedIn', true);
+
     notifyListeners();
   }
 
-  void setAuth(bool status) async {
+  Future<void> loadEmail() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    _isLoggedIn = status;
-    await prefs.setBool("isLoggedIn", status);
+    _email = prefs.getString('email');
+    notifyListeners();
+  }
+
+  Future<void> logout() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove('email');
+    await prefs.setBool('isLoggedIn', false);
+    _email = null;
     notifyListeners();
   }
 }

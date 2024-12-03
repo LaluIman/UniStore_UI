@@ -2,18 +2,30 @@ import 'package:e_commerce/screens/profile_screen/components/profile_button_sele
 import 'package:e_commerce/screens/profile_screen/components/profile_picture.dart';
 import 'package:e_commerce/screens/sign_in/sign_in_screen.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 class Body extends StatefulWidget {
   const Body({super.key});
 
   @override
   State<Body> createState() => _BodyState();
+
+  
 }
+
+
 
 class _BodyState extends State<Body> {
   @override
+  void initState() {
+    super.initState();
+    Provider.of<AuthProvider>(context, listen: false).loadEmail();
+  }
+  @override
   Widget build(BuildContext context) {
+    String? email = Provider.of<AuthProvider>(context).email;
 
     return SingleChildScrollView(
       child: Column(
@@ -23,16 +35,17 @@ class _BodyState extends State<Body> {
            SizedBox(
             height: getPropScreenHeight(10),
           ),
+          
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Carl Johnson", style: TextStyle(
+              Text(email ?? "No Email", style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w600,
-              ),),
-              SizedBox(width: getPropScreenWidth(5),),
-              Icon(Icons.edit, size: 15,)
+              )),
+              SizedBox(width: 5),
+              Icon(Icons.edit, size: 15),
             ],
           ),
 
