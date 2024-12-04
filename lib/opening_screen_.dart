@@ -27,6 +27,6 @@ class _OpeningScreenState extends State<OpeningScreen> {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
-    return Image.asset(themeProvider.isDarkMode ? "assets/opening.png" : "assets/splashDark.png");
+    return Image.asset(themeProvider.isDarkMode ? "assets/images/splashDark.png" : "assets/opening.png" );
   }
 }

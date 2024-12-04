@@ -23,6 +23,8 @@ class _SignInFormState extends State<SignInForm> {
   final List<String> errors = [];
 
   bool remember = false;
+
+  final TextEditingController _textEdtitingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -58,6 +60,8 @@ class _SignInFormState extends State<SignInForm> {
                 if (errors.isEmpty) {
                   Provider.of<AuthProvider>(context, listen: false)
                       .setAuth(true);
+                  Provider.of<AuthProvider>(context, listen: false)
+                      .saveEmailUser(_textEdtitingController.text);
                   Navigator.pushNamed(context, LoginSuccessScreen.routeName);
                 }
               })
@@ -94,7 +98,7 @@ class _SignInFormState extends State<SignInForm> {
   TextFormField passwordForm() {
     return TextFormField(
       onChanged: (value) {
-        if (value.isEmpty && errors.contains(kPassNullError)) {
+        if (value.isNotEmpty && errors.contains(kPassNullError)) {
           setState(() {
             errors.remove(kPassNullError);
           });
@@ -133,6 +137,7 @@ class _SignInFormState extends State<SignInForm> {
 
   TextFormField emailForm() {
     return TextFormField(
+      controller: _textEdtitingController,
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kEmailNullError)) {

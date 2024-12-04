@@ -2,8 +2,10 @@ import 'package:e_commerce/screens/profile_screen/components/profile_button_sele
 import 'package:e_commerce/screens/profile_screen/components/profile_picture.dart';
 import 'package:e_commerce/screens/sign_in/sign_in_screen.dart';
 import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -40,6 +42,15 @@ class _BodyState extends State<Body> {
                 size: 15,
               )
             ],
+          ),
+          Consumer<AuthProvider>(
+            builder: (context, email, child) => Text(
+              email.savedEmail,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ),
           SizedBox(
             height: getPropScreenHeight(35),
@@ -90,6 +101,7 @@ class LogOutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        Provider.of<AuthProvider>(context, listen: false).setAuth(false);
         Navigator.pushNamedAndRemoveUntil(
             context, SignInScreen.routeName, (Route<dynamic> routes) => false);
       },
