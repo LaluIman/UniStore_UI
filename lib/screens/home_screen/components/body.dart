@@ -19,9 +19,8 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   List<Product> _filteredProducts = demoProducts;
-  bool _isSearching = false; // To track if user is searching
+  bool _isSearching = false; 
 
-  // Method to filter products based on the search input
   void _filterProducts(String search) {
     setState(() {
       _isSearching = search.isNotEmpty;

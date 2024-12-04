@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/Users/macbookm1/Documents/ITmabruh/Flutter_stuff/UniStore_UI/android/app"
+    name=":app"
+    type="APP"
+    maven="android:app:"
+    gradle="7.3.0"
+    buildFolder="/Users/macbookm1/Documents/ITmabruh/Flutter_stuff/UniStore_UI/build/app"
+    bootClassPath="/Users/macbookm1/Library/Android/sdk/platforms/android-34/android.jar:/Users/macbookm1/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-34">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
