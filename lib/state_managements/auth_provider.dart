@@ -15,6 +15,7 @@ class AuthProvider extends ChangeNotifier {
   void loadAuth() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     _isLoggedIn = prefs.getBool("isLoggedIn") ?? false;
+    _savedEmail = prefs.getString("savedEmail")  ?? '';
     print("loadAuth: $_isLoggedIn");
     notifyListeners();
   }
@@ -26,8 +27,10 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void saveEmailUser(String emailBro){
+  void saveEmailUser(String emailBro) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     _savedEmail = emailBro;
+    await prefs.setString("savedEmail", emailBro);
     notifyListeners();
   }
 

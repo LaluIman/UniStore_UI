@@ -24,7 +24,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (context) => FavoriteProvider()),
       ],
       child: DevicePreview(
-          isToolbarVisible: false,
+          // isToolbarVisible: false,
           enabled: true,
           builder: (context) => MainApp(isLoggedIn: isLoggedIn))));
 }

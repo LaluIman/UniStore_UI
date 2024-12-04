@@ -1,39 +1,31 @@
-import 'package:e_commerce/constant.dart';
-import 'package:e_commerce/screens/search_screen/search_screen.dart';
-import 'package:e_commerce/size_config.dart';
+import 'package:e_commerce/state_managements/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SearchField extends StatelessWidget {
-  const SearchField({
-    super.key,
-  });
+  final Function(String) onChanged;
+
+  const SearchField({super.key, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, SearchScreen.routeName);
-      },
-      child: Container(
-          width: SizeConfig.screenWidth * 0.6,
-          decoration: BoxDecoration(
-              color: kSecondaryColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(10)),
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: getPropScreenWidth(12),
-                vertical: getPropScreenWidth(10)),
-            child: Row(
-              children: [
-                Icon(Icons.search),
-                SizedBox(
-                  width: 10,
-                ),
-                Text("Search product")
-              ],
-            ),
-          )),
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.6,
+      decoration: BoxDecoration(
+        color: themeProvider.isDarkMode ? Colors.grey.shade700 : Colors.grey[200],
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: TextField(
+        onChanged: onChanged,
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 9),
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            hintText: "Search a Product",
+            prefixIcon: const Icon(Icons.search)),
+      ),
     );
   }
 }
-

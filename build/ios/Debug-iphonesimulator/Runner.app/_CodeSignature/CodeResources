@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Y783jZ8/C5kQwh8dyprmQprxlIw=
+		2pKVhwKZucAwSsyrj6bH00jHlpw=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		syATviF2NcmkjOmvbeutEHUoVlk=
+		EKWnh2T6XaZnd/fbQBkekks5hpo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		6UyLASMj7vokC3PN+8NqrRCaBUQ=
+		2VzxJtJzc0yOkFt67ZYHE+0ux6E=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		vv1GvemTNQgmtP6MVVIxy86wKko=
+		eNP4yDWVMjks9pRuQ9E0C4up+mc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		usP7qgv1ylp5aJq1zx0SYr1ZOcw=
+		22KzSGHFCozGcMQmn5XTOnQq7oo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Bold.ttf</key>
 		<data>
@@ -442,7 +442,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/splash1dark.png</key>
 		<data>
-		UBt5H02r/A7uNxsTRR0dIDheHqY=
+		vQS+QZ788ObRR6ikcxL/xMgC+KE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/splash2.png</key>
 		<data>
@@ -500,6 +500,10 @@
 		<data>
 		dNflvMDF/DQ/RxAZA6CsVCQ0/6Y=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/logo.png</key>
+		<data>
+		s9vgXqwiS+bXRUpYr1vGLlZSRmg=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/opening.png</key>
 		<data>
 		YYoq7GgaVI65hwqI7nK/TA3Gc2I=
@@ -514,7 +518,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		D8f5HfHwjhyWs9jDIguA6nZdB7s=
+		87+z23P4O5G6sHRV2HXgcgzJtU0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -737,7 +741,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			11OweQknxxbIkXiixZFkPrdx+bB20cRjZBki1Fe4nes=
+			uT0pC/NbYZkblwzQrhapinxRVq0poouQUkZmMyXsWwA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -751,21 +755,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			edbO7Ihxb77UYsCRhzgCceDrj/JbjigXPg61gF4+URA=
+			vdoL0WM/HxlEqm4dEbdjZCn9j9A3MA9kSaYeSGH8d/Q=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5zO+ArAOTk3n00dH3buAv81qmSyFAQ5kRqlEK/ytdEg=
+			joe9W+GMKjiOQhRc5JjIIroDw6jM8KSrkWJwmmI4ppI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NFHAQ1MrkJbkcsUjY5kLBVZ+m4U4aBGemeoQyJxS6FQ=
+			scwAthldVpCbj27i5y4+ITpFSU0J3/iBXV8XivinRXg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -779,7 +783,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			as+lW4IbLoJxDs3YanrBZIG4fmf6mIp63wspaQclJ18=
+			V55kWe8wpdsFp7zJDCALpbDE+OrGUEQGPGsiql4CzlA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Bold.ttf</key>
@@ -1430,7 +1434,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K0SXTvdVO0tExilouG3V0CCBRxWBwEXEfshF5yOd0nI=
+			5Gs76Fs23AQe0gjpbu4jFFYfnWuITUlqSrqfttXVVqE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/splash2.png</key>
@@ -1531,6 +1535,13 @@
 			OMUL5kFcxmmFlVji75p+GqY01utkxHMH+QztnQ+CcFs=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zhtg0hMg+cvchMQW+ExhrK5qUw6sRBfqUOrGa3qYetQ=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/opening.png</key>
 		<dict>
 			<key>hash2</key>
@@ -1556,7 +1567,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			V7RgjOjTEaolveGXDB1JmXssDHbUBr5wrbI9J/HgaJg=
+			W93I2I9BTAf7KZAElWH8D3beLwDt0Oxa8RhNj2BcI/E=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
