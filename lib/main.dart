@@ -1,4 +1,5 @@
 //import 'package:e_commerce/constant.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:e_commerce/components/bottom_navigationbar.dart';
 import 'package:e_commerce/opening_screen_.dart';
 import 'package:e_commerce/routes.dart';
@@ -15,12 +16,16 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   bool isLoggedIn = prefs.getBool("isLoggedIn") ?? false;
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => ThemeProvider()),
-    ChangeNotifierProvider(create: (context) => AuthProvider()),
-    ChangeNotifierProvider(create: (context) => CartProvider()), 
-    ChangeNotifierProvider(create: (context) => FavoriteProvider()), 
-  ], child: MainApp(isLoggedIn: isLoggedIn)));
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+        ChangeNotifierProvider(create: (context) => AuthProvider()),
+        ChangeNotifierProvider(create: (context) => CartProvider()),
+        ChangeNotifierProvider(create: (context) => FavoriteProvider()),
+      ],
+      child: DevicePreview(
+          enabled: true,
+          builder: (context) => MainApp(isLoggedIn: isLoggedIn))));
 }
 
 class MainApp extends StatelessWidget {
@@ -31,11 +36,16 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(
-      builder: (context, theme, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: themeData(theme.isDarkMode),
-        initialRoute: isLoggedIn ? CustomNavigationBar.routeName : OpeningScreen.routeName,
-        routes: routes,
-      ));
+        builder: (context, theme, child) => MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: themeData(theme.isDarkMode),
+              useInheritedMediaQuery: true,
+              locale: DevicePreview.locale(context),
+              builder: DevicePreview.appBuilder,
+              initialRoute: isLoggedIn
+                  ? CustomNavigationBar.routeName
+                  : OpeningScreen.routeName,
+              routes: routes,
+            ));
   }
 }
