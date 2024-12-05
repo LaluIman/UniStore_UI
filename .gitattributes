@@ -1,8 +1,18 @@
-# Specify Dart as the main language for your project
+# Force Dart to be the primary language
 *.dart linguist-language=Dart
 
-# Mark certain files or extensions as vendored (not counted in language statistics)
+# Ignore Makefiles and other non-essential languages from being detected
+Makefile linguist-vendored
+*.mk linguist-vendored
+*.sh linguist-vendored
+*.yml linguist-vendored
+*.yaml linguist-vendored
+
+# Ignore other files or languages that should not affect the stats
 *.js linguist-vendored
 *.m linguist-vendored
 *.h linguist-vendored
 *.swift linguist-vendored
+*.html linguist-vendored
+*.rb linguist-vendored
+*.java linguist-vendored
