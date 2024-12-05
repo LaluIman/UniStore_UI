@@ -1,4 +1,7 @@
+# Specify Dart as the main language for your project
 *.dart linguist-language=Dart
+
+# Mark certain files or extensions as vendored (not counted in language statistics)
 *.js linguist-vendored
 *.m linguist-vendored
 *.h linguist-vendored
