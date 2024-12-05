@@ -3,6 +3,7 @@
 
 # Ignore Makefiles and other non-essential languages from being detected
 Makefile linguist-vendored
+Makefile linguist-detectable=false
 *.mk linguist-vendored
 *.sh linguist-vendored
 *.yml linguist-vendored
