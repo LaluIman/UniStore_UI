@@ -24,8 +24,10 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (context) => FavoriteProvider()),
       ],
       child: DevicePreview(
-          // isToolbarVisible: false,
+          isToolbarVisible: false,
           enabled: true,
+          defaultDevice: Devices.ios.iPhone13ProMax,
+          devices: [Devices.ios.iPhone13ProMax],
           builder: (context) => MainApp(isLoggedIn: isLoggedIn))));
 }
 
