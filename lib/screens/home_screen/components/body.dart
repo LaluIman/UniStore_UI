@@ -43,6 +43,7 @@ class _BodyState extends State<Body> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+        SizedBox(height: getPropScreenHeight(30)),
             HeaderComponent(onSearchChanged: _filterProducts),
             _isSearching ? _buildGridProducts() : _buildDefaultHome(),
           ],
