@@ -31,7 +31,7 @@ class _BodyState extends State<Body> {
             .toList();
       } else {
         _filteredProducts =
-            demoProducts; // Reset to default when search is cleared
+            demoProducts; 
       }
     });
   }
